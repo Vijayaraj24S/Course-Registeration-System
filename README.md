@@ -51,8 +51,7 @@ How to Run Locally:
 - Passwords encrypted using BCryptPasswordEncoder
 
 # Notes:
-- This project is intended for learning and demonstration purposes
-- GitHub hosts the source code only; the application does not run directly on GitHub
+- Source code only uploaded; the application does not run directly on GitHub
 - Backend and database must be run locally or deployed to a server for full functionality
 
 
