@@ -1,8 +1,8 @@
-#Course-Registration-System
+# Course-Registration-System
   A full-stack Course Registration System built using Spring Boot, MySQL, and HTML/CSS/JavaScript.
 The application allows users to view available courses, register for courses, and view enrolled students through RESTful APIs.
 
-Features:
+# Features:
 -View available courses
 -Register a student for a course
 -View enrolled students
@@ -10,19 +10,19 @@ Features:
 -MySQL database integration
 -Frontend–backend communication using Fetch API
 
-Backend:
+# Backend:
 -Java 21
 -Spring Boot
 -Spring Data JPA
 -MySQL
 -Maven
 
-Frontend:
+# Frontend:
 -HTML
 -CSS
 -JavaScript (Fetch API)
 
-API Endpoints:
+# API Endpoints:
 
  User APIs:
 -GET /user/courses  => Fetch all available courses
@@ -45,12 +45,12 @@ How to Run Locally:
 -Open index.html using Live Server or browser
 -Frontend communicates with backend using REST APIs
 
-Security:
+# Security:
 -Spring Security with Basic Authentication
 -Role-based authorization (ADMIN, USER)
 -Passwords encrypted using BCryptPasswordEncoder
 
-Notes:
+# Notes:
 -This project is intended for learning and demonstration purposes
 -GitHub hosts the source code only; the application does not run directly on GitHub
 -Backend and database must be run locally or deployed to a server for full functionality
