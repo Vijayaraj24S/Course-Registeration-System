@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registeration</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        form input{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        form select{
+            padding: 10px;
+            border-radius: 5px;
+        }
+        form button{
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            background-color: orange;
+            border-color: transparent;
+            margin-left: 220px;
+        }
+        
+        form button:hover{
+            background-color: transparent;
+            color:rgb(252, 152, 2);
+            border-color: gray;
+        }
+
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        form{
+            height: 400px;
+            width: 500px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            /* display: flex;
+            flex-direction: column; */
+            
+            padding-top: 90px;
+        }
+
+        form label{
+            margin-left: 35px;
+            height: 20px;
+            width: 150px;
+            font-weight: bold;
+        }
+        form input, form select{
+             height: 40px;
+            width: 250px;
+            border-color: gray;
+            border-width: 1px;
+        }
+
+        form select{
+            margin-bottom: 20px;
+        }
+
+        #name{
+            margin-left: 50px;
+            margin-bottom: 20px;
+        }
+        #emailId{
+            margin-left: 32px;
+            margin-bottom: 20px;
+        }
+        #courseName{
+            margin-left: 59px;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2 style="color: orange;">Register a Course</h2>
+    <form action="http://localhost:8080/user/courses/register" method="post">
+        <label for="name">Enter Your Name</label>
+        <input type="text" name="name" id="name"><br>
+        <label for="emailId">Enter Your Email ID</label>
+        <input type="email" name="emailId" id="emailId"><br>
+        <label for="courseName">Select a Course</label>
+        <select name="courseName" id="courseName">
+            <option value="Java Essentials">Java Essentials</option>
+            <option value="Python for ML">Python for ML</option>
+            <option value="SpringBoot">SpringBoot</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+<!---->

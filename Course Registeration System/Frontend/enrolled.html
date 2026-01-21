@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            height: 100%;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        table th{
+            background-color: #020f49;
+            color: white;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enrolled Students</h2>
+    <table  border="1" style="border-collapse: collapse;">
+     <tr>
+        <th width="90px">Student ID</th>
+        <th width="400px">Student Name</th>
+        <th width="400px">Email ID</th>
+        <th width="250px">Course Name</th>
+     </tr>
+     <tbody id="studentTable"></tbody>
+    </table>
+    <script>
+        const BASE_URL = "http://localhost:8080";
+        function getEnrolledStudents(){
+            let studentTable=document.getElementById("studentTable");
+            fetch(`${BASE_URL}/admin/courses/enrolled`)
+            .then((response)=>response.json())
+            .then((students)=>{
+                var row="";
+                students.forEach((student) => {
+                    row+=`<tr>
+                        <td>${student.id}</td>
+                        <td>${student.name}</td>
+                        <td>${student.emailId}</td>
+                        <td>${student.courseName}</td>
+                        </tr>`;
+                });
+                studentTable.innerHTML=row;
+            })
+        }
+
+        window.onload=function(){
+            getEnrolledStudents();
+        }
+    </script>
+</body>
+</html>

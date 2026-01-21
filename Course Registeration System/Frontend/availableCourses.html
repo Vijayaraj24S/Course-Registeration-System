@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            height: 100%;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        table th{
+            background-color: #020f49;
+            color: white;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center; color: #020f49;">Available Courses</h2>
+    <table  border="1" style="border-collapse: collapse;">
+     <tr>
+        <th width="90px">Course ID</th>
+        <th width="400px">Course Name</th>
+        <th width="400px">Trainer</th>
+        <th width="150px">Duration in Weeks</th>
+     </tr>
+     <tbody id="courseTable"></tbody>
+    </table>
+    <script>
+        const BASE_URL = "http://localhost:8080";
+        function getAvailableCourses(){
+            let courseTable=document.getElementById("courseTable");
+            fetch(`${BASE_URL}/user/courses`)
+            .then((response)=>response.json())
+            .then((courses)=>{
+                var row="";
+                courses.forEach((course) => {
+                    row+=`<tr>
+                        <td>${course.courseId}</td>
+                        <td>${course.courseName}</td>
+                        <td>${course.trainer}</td>
+                        <td>${course.durationInWeeks}</td>
+                        </tr>`;
+                });
+                courseTable.innerHTML=row;
+            })
+        }
+
+        window.onload=function(){
+            getAvailableCourses();
+        }
+    </script>
+</body>
+</html>
